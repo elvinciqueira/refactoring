@@ -1,0 +1,8 @@
+{
+  "name": "refactoring",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:elvinciqueira/refactoring.git",
+  "author": "elvinciqueira <elvinciqueira@gmail.com>",
+  "license": "MIT"
+}
