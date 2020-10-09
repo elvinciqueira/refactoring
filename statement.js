@@ -82,5 +82,3 @@ function statement (invoice, plays) {
 }
 
 console.log(statement(invoice, plays));
-
-// console.log('teste', plays);
