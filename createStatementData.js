@@ -15,8 +15,7 @@ function createStatementData(invoice, plays) {
   
     return result;
   }
-  
-  
+
   function totalAmount(data) {
     return data.performances
       .reduce((total, p) => total + p.amount, 0);
