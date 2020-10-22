@@ -8,8 +8,9 @@ function createStatementData(invoice, plays) {
   return result;
 
   function enrichPerformance(aPerformance) {
+    const calculator = new PerformanceCalculator(aPerformance, playFor(aPerformance));
     const result = Object.assign({}, aPerformance);
-    result.play = playFor(result);
+    result.play = calculator.play;
     result.amount = amountFor(result);
     result.volumeCredits = volumeCreditsFor(result);
   
@@ -63,9 +64,18 @@ function createStatementData(invoice, plays) {
     
     result += Math.max(aPerformance.audience - 30, 0);
   
-    if ("comedy" === aPerformance.play.type) result += Math.floor(aPerformance.audience / 5);
+    if ("comedy" === aPerformance.play.type) {
+      result += Math.floor(aPerformance.audience / 5);
+    }
   
     return result;
+  }
+}
+
+class PerformanceCalculator {
+  constructor(aPerformance, aPlay) {
+    this.performance = aPerformance;
+    this.play = aPlay;
   }
 }
 
